@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"></title>
+</head>
+
+<style>
+    /*
+    table {
+        border: black 3px solid;
+        border-collapse: collapse;
+    }
+    .columna{
+        border: black 3px solid;
+        border-collapse: collapse;
+    }
+    .fila{
+        border: black 2px solid;
+        border-collapse: collapse;
+    }
+    .borde{
+        border: black 2px solid;
+        border-collapse: collapse;
+    }*/
+
+    table {
+        width:70% ;
+        border: 1px solid #000;
+    }
+    th, td {
+        width: 25%;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #000;
+        border-spacing: 0;
+    }
+
+</style>
+
+
+
+<body>
+    <h1 th:text="${titulo}" style="color: blue"> </h1>
+    <div th:if="${usuarios.size()==0}"> No hay usuarios en la lista</div>
+
+    <table  th:if="${usuarios.size() >0}">
+        <thead class="columna">
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </thead>
+        <tbody class="borde">
+            <tr class="fila" th:each="usuario: ${usuarios}">
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellido}"></td>
+                <td th:text="${usuario.email}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
