@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${Titulo}"></title>
+</head>
+<body>
+<h1 th:text="${Titulo}"></h1>
+<ul>
+    <li>
+        <a th:href="@{/variables/String/} + 'Bienvenido al ISTA Matius'">/variables/String/Bienvenido al ISTA Matius</a>
+    </li>
+    <li>
+        <a th:href="@{/variables/String/} + 'Bienvenido al ISTA Luis'">/variables/String/Bienvenido al ISTA Luis</a>
+    </li>
+    <li>
+        <a th:href="@{/variables/String/} + 'Bienvenido al ISTA Juan '+'/'+ 90">/variables/String/Bienvenido al ISTA Juan</a>
+    </li>
+    <li>
+        <a th:href="@{/variables/String/} + ${Titulo}">/variables/String/Titulo</a>
+    </li>
+</ul>
+</body>
+</html>
